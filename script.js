@@ -1,5 +1,8 @@
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
+const guestBtn = document.getElementById("guestBtn");
+const createProfileBtn = document.getElementById("createProfileBtn");
+const routeStatus = document.getElementById("routeStatus");
 
 /**
  * Applies the selected theme and updates icon state.
@@ -7,25 +10,49 @@ const themeIcon = document.getElementById("themeIcon");
  */
 function applyTheme(theme) {
   document.body.classList.toggle("dark", theme === "dark");
-  themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+
+  if (themeIcon) {
+    themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+}
+
+/**
+ * Persists user type, displays loading microcopy, and redirects.
+ * @param {"guest" | "registered"} userType
+ * @param {string} targetPage
+ */
+function navigateWithState(userType, targetPage) {
+  localStorage.setItem("userType", userType);
+
+  if (routeStatus) {
+    routeStatus.textContent = "Preparing your space...";
+  }
+
+  [guestBtn, createProfileBtn].forEach((button) => {
+    if (button) {
+      button.disabled = true;
+    }
+  });
+
+  window.setTimeout(() => {
+    window.location.href = targetPage;
+  }, 350);
 }
 
 const theme = localStorage.getItem("theme") || "light";
 applyTheme(theme);
 
 themeToggle?.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark");
+  const isDark = !document.body.classList.contains("dark");
   const selectedTheme = isDark ? "dark" : "light";
   localStorage.setItem("theme", selectedTheme);
-  themeIcon.textContent = isDark ? "☀️" : "🌙";
+  applyTheme(selectedTheme);
 });
 
-document.getElementById("guestBtn")?.addEventListener("click", () => {
-  localStorage.setItem("userType", "guest");
-  window.location.href = "dashboard.html";
+guestBtn?.addEventListener("click", () => {
+  navigateWithState("guest", "dashboard.html");
 });
 
-document.getElementById("createProfileBtn")?.addEventListener("click", () => {
-  localStorage.setItem("userType", "registered");
-  window.location.href = "profile.html";
+createProfileBtn?.addEventListener("click", () => {
+  navigateWithState("registered", "profile.html");
 });

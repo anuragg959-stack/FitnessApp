@@ -162,9 +162,22 @@ h1 {
   color: var(--text);
 }
 
+.btn[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .microcopy {
   color: var(--accent);
   margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.route-status {
+  color: var(--primary);
+  min-height: 1.2rem;
+  margin: 0;
 }
 
 .footer {
