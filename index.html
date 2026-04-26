@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Pal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">FITNESS PAL<span class="dot">.</span></div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+    </header>
+
+    <main class="hero fade-in">
+      <section class="hero-content">
+        <p class="eyebrow">your personal fitness companion</p>
+        <h1>FITNESS PAL.</h1>
+        <p class="subtitle">Track. Improve. Transform.</p>
+
+        <div class="illustration-wrap" aria-hidden="true">
+          <svg
+            class="fitness-illustration"
+            viewBox="0 0 420 220"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="30" y="165" width="360" height="8" rx="4" class="line" />
+            <rect x="52" y="132" width="82" height="28" rx="6" class="item" />
+            <circle cx="72" cy="146" r="10" class="line" />
+            <circle cx="114" cy="146" r="10" class="line" />
+            <rect x="164" y="95" width="26" height="65" rx="8" class="item" />
+            <rect x="194" y="118" width="26" height="42" rx="8" class="item" />
+            <rect x="248" y="123" width="110" height="37" rx="10" class="item" />
+            <line x1="264" y1="141" x2="340" y2="141" class="line" />
+            <circle cx="292" cy="141" r="10" class="pulse" />
+            <path d="M65 122 q16 -14 32 0" class="line" />
+            <path d="M176 78 q14 -16 28 0" class="line" />
+            <path d="M275 104 q18 -20 36 0" class="line" />
+          </svg>
+        </div>
+
+        <div class="cta-group">
+          <button id="createProfileBtn" class="btn btn-primary">Create Profile</button>
+          <button id="guestBtn" class="btn btn-outline">Login as Guest</button>
+        </div>
+        <p class="microcopy">Start your journey today.</p>
+        <p id="routeStatus" class="route-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="footer">Built for your fitness journey</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
