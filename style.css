@@ -178,6 +178,7 @@ h1 {
   color: var(--primary);
   min-height: 1.2rem;
   margin: 0;
+  text-align: center;
 }
 
 .footer {
@@ -185,6 +186,108 @@ h1 {
   padding: 1.2rem;
   color: var(--accent);
   font-size: 0.9rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #0000004f;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-card {
+  width: min(520px, 100%);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.25rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--text);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.profile-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.profile-form label {
+  font-weight: 500;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.profile-form input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.profile-page {
+  width: min(900px, 100%);
+  margin: 1rem auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.profile-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.profile-info h1 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+}
+
+.profile-info p {
+  margin: 0.35rem 0;
+  color: var(--accent);
+}
+
+.profile-actions {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
 }
 
 .fade-in {
@@ -222,6 +325,11 @@ h1 {
 
   .cta-group {
     flex-direction: column;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
