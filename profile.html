@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Pal | Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">FITNESS PAL<span class="dot">.</span></div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+    </header>
+
+    <main class="profile-page fade-in">
+      <section class="profile-card">
+        <img id="profilePhoto" class="profile-photo" alt="Profile picture" />
+        <div class="profile-info">
+          <h1 id="profileName">Welcome</h1>
+          <p id="profileEmail">email@email.com</p>
+          <p id="profilePhone">(000) 000-0000</p>
+        </div>
+      </section>
+
+      <section class="profile-actions">
+        <button id="settingsBtn" class="btn btn-outline">Settings</button>
+        <button id="supportBtn" class="btn btn-outline">Support</button>
+        <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+      </section>
+      <p id="profileStatus" class="route-status" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
